@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" media="">
+    <title>Agent generator - The Spy Game</title>
+    
+</head>
+<body>
+    <div class="imagem">
+        <img src="classes\duascaras.png" id="imgfundo">
+    </div>
+
+    <div class="body">
+        <div>
+            <h1>Agent Generator</h1>
+            <br>
+        </div>
+
+       
+
+        <form>
+            <fieldset class="grupo">
+                <div class="campo">
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" id="nome">
+                </div>
+
+                <div class="campo">
+                    <label for="codnome">Codnome</label>
+                    <input type="text" name="codnome" id="codnome">
+                </div>
+
+            </fieldset>
+
+            <fieldset class="grupo">
+                <div class="campo">
+                    <label for="idade">idade</label>
+                    <input type="text" name="idade" id="idade">
+                </div>
+            </fieldset>
+
+            <fieldset class="grupo">
+                <div class="campo">
+                    <label for="classe">Classe</label>
+                    <select id="classe" onchange="getSelectValue();">
+                        <option selected>Duas caras</option>
+                        <option>Hacker</option>
+                        <option>Infiltrador</option>
+                        <option>Artista Marcial</option>
+                        <option>Médico</option>
+                        <option>Ranger</option>
+                        <option>Soldado</option>
+                        <option>Técnico</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="background">Background</label>
+                    <select id="background">
+                        <option selected disabled value="">Selecione</option>
+                        <option>Acadêmico</option>
+                        <option>Atleta</option>
+                        <option>Funcionário público</option>
+                        <option>Vigarista</option>
+                        <option>Ciminoso</option>
+                        <option>Diplomata</option>
+                        <option>Oficial da lei</option>
+                        <option>Militar</option>
+                        <option>Motorista</option>
+                        <option>Sobrevivencialista</option>
+                        <option>Cientista</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <div class="descricao">
+                <h3>Descrição de classe</h3>
+                <br>
+                <p id="descricao-c"> Mestre da manipulação/enganação. Se sentem em casa estando no centro
+                    das atenções, blefando para entrar no interior de um 
+                    círculo. Eles desaparecem no fundo tão perfeitamente que
+                    são quase invisíveis. Duas caras é um camaleão em seu
+                    estilo escolhido, escondido à vista ou comandando
+                    com pura bravata.</p>
+                <br>
+                <h4>Hit points</h4>
+                <p id="hit-points"> 1d8 + modificador de constituição</p>
+                <br>
+                <h4>Proficiencias</h4>
+                <div style="display: flex;">
+                    <p><strong>Armadura: </strong></p><p id="tipo-armadura"> Armadura leve</p>
+                </div>
+                <div style="display: flex;">
+                    <p><strong>Distancia: </strong></p><p id="tipo-distancia"> Armas de distância simples</p>
+                </div>
+                <div style="display: flex;">
+                    <p><strong>Corpo-a-corpo: </strong></p><p id="tipo-corpoacorpo"> Armas de corpo-a-corpo simples</p>
+                </div>
+                <div style="display: flex;">
+                    <p><strong>Ferramentas: </strong></p><p id="ferramentas"> kits de disfarce e kits de fraude</p>
+                </div>
+                <br>
+
+                <div id="Veiculos">
+                    <strong>Veículo </strong>(apenas um)<strong>:</strong>
+                    <br>
+                    <input type="checkbox" id="veiculo1" name="veiculo1" value="motos" class="checkbox">
+                    <label for="veiculo1"> motos </label>
+                    <input type="checkbox" id="veiculo2" name="veiculo2" value="carros" class="checkbox">
+                    <label for="veiculo2"> carros </label>
+                    <input type="checkbox" id="veiculo3" name="veiculo3" value="aviões" class="checkbox">
+                    <label for="veiculo3"> aviões </label>
+                    <input type="checkbox" id="veiculo4" name="veiculo4" value="helicopteros" class="checkbox"> 
+                    <label for="veiculo4"> helicopteros </label>
+                </div>
+
+                <br>
+
+                <div style="display: flex;">
+                    <p><strong>Saving throws: </strong></p><p id="trhows"> destreza e carisma</p>
+                </div>
+
+                <br>
+                <div id="Skills">
+                    <strong>Skills </strong>(três)<strong>:</strong>
+                    <br>
+                    <input type="checkbox" id="skill1" name="skill1" value="Deception" class="checkbox">
+                    <label for="skill1"> Deception </label>
+                    <input type="checkbox" id="skill2" name="skill2" value="Espionage" class="checkbox">
+                    <label for="skill2"> Espionage </label>
+                    <input type="checkbox" id="skill3" name="skill3" value="Infiltration" class="checkbox">
+                    <label for="skill3"> Infiltration </label>
+                    <input type="checkbox" id="skill4" name="skill4" value="Insigth" class="checkbox">
+                    <label for="skill4"> Insight </label>
+                    <input type="checkbox" id="skill5" name="skill5" value="Perseption" class="checkbox">
+                    <label for="skill5"> Perseption </label>
+                    <input type="checkbox" id="skill6" name="skill6" value="Persuasion" class="checkbox">
+                    <label for="skill6"> Persuasion </label>
+                    <input type="checkbox" id="skill7" name="skill7" value="Sleigth of hand" class="checkbox">
+                    <label for="skill7"> Sleigth of hand </label>
+                    <input type="checkbox" id="skill8" name="skill8" value="Stealth" class="checkbox">
+                    <label for="skill8"> Stealth </label>
+                </div>
+
+                <br>
+                <div id="Equipamento">
+                    <strong>Equipamento: </strong>
+                    <br>
+                    equipamento1:
+                    <select id="equipamento1">
+                        <option selected disabled value="">Selecione</option>
+                        <option>Pistola leve</option>
+                        <option>faca</option>
+                        <option>garrote</option>
+                    </select>
+                    <br>
+                    equipamento2:
+                    <select id="equipamento2">
+                        <option selected disabled value="">Selecione</option>
+                        <option>Colete</option>
+                        <option>Jaqueta de couro</option>
+                    </select>
+                    <br>
+                    equipamento3:
+                    <select id="equipamento3">
+                        <option selected disabled value="">Selecione</option>
+                        <option>Pacote de diplomata</option>
+                        <option>Pacote de disfarce</option>
+                    </select>
+                    <br>
+                    equipamento4:
+                    <select id="equipamento4">
+                        <option selected disabled value="">Selecione</option>
+                        <option>Kit de disfarce</option>
+                        <option>Kit de fraude</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+            
+        </form>
+
+        <form class="manipulando-caracteristicas">
+            <h3>Características</h3>
+            <br>
+            <div style="display: flex;">
+                <p><strong>Pontos disponíveis: </strong></p><p id="pontos-disponiveis">15</p>
+            </div>
+            <br>
+            <div class="box">
+                <label for="força">Força: </label>
+                <div class="dec button">-</div>
+                <input type="text" name="for" id="forca_carac" value="10" class="input-filed">
+                <div class="inc button">+</div>
+            </div>
+
+            <div class="box">
+                <label for="deztreza">Destreza: </label>
+                <div class="dec button">-</div>
+                <input type="text" name="dez" id="dez_carac" value="10" class="input-filed">
+                <div class="inc button">+</div>
+            </div>
+
+            <div class="box">
+                <label for="constituicao">Constituição: </label>
+                <div class="dec button">-</div>
+                <input type="text" name="con" id="con_carac" value="10" class="input-filed">
+                <div class="inc button">+</div>
+            </div>
+
+            <div class="box">
+                <label for="inteligencia">Inteligência: </label>
+                <div class="dec button">-</div>
+                <input type="text" name="int" id="int_carac" value="10" class="input-filed">
+                <div class="inc button">+</div>
+            </div>
+
+            <div class="box">
+                <label for="sabedoria">Sabedoria: </label>
+                <div class="dec button">-</div>
+                <input type="text" name="sab" id="sab_carac" value="10" class="input-filed">
+                <div class="inc button">+</div>
+            </div>
+
+            <div class="box">
+                <label for="carisma">Carisma: </label>
+                <div class="dec button">-</div>
+                <input type="text" name="car" id="car_carac" value="10" class="input-filed">
+                <div class="inc button">+</div>
+            </div>
+            
+            
+            
+        </form>
+        <button type="button" onclick="window.print()" class="botao">Completar</button>
+    </div>
+    
+</body>
+<script src="script.js"></script>
+</html>
